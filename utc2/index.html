@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Timetable</title>
+    <link rel="stylesheet" href="thietlap.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Pacifico&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="diamond top-left"></div>
+            <div class="diamond top-right"></div>
+            <h1 class="title">School Timetable</h1>
+            <p class="date">15/09/2025</p>
+            <div class="decoration book-top-left"></div>
+            <div class="decoration note-top-right"></div>
+        </div>
+
+        <div class="button-group">
+            <button id="showAddFormBtn" class="add-button">
+                + Thêm Môn Học Mới
+            </button>
+            <button id="exportCalendarBtn" class="export-button">
+                Lưu vào Lịch (iCal)
+            </button>
+        </div>
+        
+        <div id="addFormContainer" class="form-container hidden">
+            <h2>Thêm Môn Học/Sự Kiện</h2>
+            <form id="addScheduleForm">
+                <input type="text" id="tenMon" placeholder="Tên môn học (vd: Đại số tuyến tính)" required>
+                <input type="text" id="tiet" placeholder="Giờ học (vd: 7h, 13h55)" required>
+                <select id="thu" required>
+                    <option value="" disabled selected>Chọn Ngày</option>
+                    <option value="Mon">Thứ 2 (Mon)</option>
+                    <option value="Tue">Thứ 3 (Tue)</option>
+                    <option value="Wed">Thứ 4 (Wed)</option>
+                    <option value="Thu">Thứ 5 (Thu)</option>
+                    <option value="Fri">Thứ 6 (Fri)</option>
+                    <option value="Sat">Thứ 7 (Sat)</option>
+                </select>
+                <input type="text" id="phongHoc" placeholder="Phòng học (không bắt buộc)">
+                <input type="text" id="giaoVien" placeholder="Giáo viên (không bắt buộc)">
+                <input type="text" id="tuanHoc" placeholder="Tuần học (không bắt buộc)">
+                
+                <button type="submit" class="submit-button">Lưu Lịch Học</button>
+                <button type="button" id="cancelAddBtn" class="cancel-button">Hủy bỏ</button>
+            </form>
+        </div>
+
+        <table id="scheduleTable">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+        <p class="footer-text">CQ.66.QTDLLH</p>
+        <div class="decoration books-bottom-left"></div>
+        <div class="decoration backpack-bottom-right"></div>
+    </div>
+
+    <script src="monhoc.js"></script>
+</body>
+</html>

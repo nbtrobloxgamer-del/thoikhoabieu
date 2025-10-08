@@ -1,0 +1,317 @@
+/* General Body and Container Styles */
+body {
+    font-family: 'Poppins', sans-serif; /* Sử dụng Poppins làm font chính */
+    background-color: #fce4ec; /* Nền hồng nhạt */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden; /* Ngăn chặn scroll ngang toàn bộ body */
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    width: 800px; /* Chiều rộng cố định cho container */
+    overflow-x: auto; /* Cho phép bảng cuộn ngang */
+    position: relative;
+    z-index: 1; /* Đảm bảo container nằm trên các decoration */
+    margin: 20px 0; /* Để có khoảng cách với các cạnh nếu màn hình nhỏ */
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.title {
+    font-family: 'Pacifico', cursive; /* Font đặc biệt cho tiêu đề */
+    font-size: 3.5em; /* Kích thước lớn */
+    color: #ff914d; /* Màu cam tươi */
+    margin-bottom: 5px;
+    line-height: 1.1;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    color: #888;
+    margin-top: 0;
+}
+
+/* Decoration Elements - Diamond */
+.diamond {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #ffd700; /* Màu vàng */
+    transform: rotate(45deg);
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+.diamond.top-left { top: 0; left: 0; }
+.diamond.top-right { top: 0; right: 0; }
+
+/* General Table Styles */
+#scheduleTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border: 2px solid #ffbe7a; /* Border dày màu cam */
+}
+
+#scheduleTable th, #scheduleTable td {
+    border: 1px solid #ffbe7a;
+    padding: 12px 8px; /* Tăng padding */
+    text-align: center;
+    font-size: 0.9em;
+    min-width: 90px; /* Đảm bảo độ rộng tối thiểu cho cột */
+}
+
+#scheduleTable th {
+    background-color: #ff914d; /* Màu cam đậm hơn */
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+#scheduleTable td {
+    background-color: #ffe0b2; /* Nền cam nhạt cho ô */
+    color: #555;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+#scheduleTable tbody tr:nth-child(odd) td {
+    background-color: #fff3e0; /* xen kẽ nền trắng nhạt */
+}
+
+/* Specific Cell Styles */
+#scheduleTable td:first-child { /* Cột Time */
+    font-weight: 600;
+    background-color: #ffbe7a; /* Màu cam cho cột Time */
+    color: #fff;
+}
+
+.subject {
+    font-weight: bold;
+    color: #4a148c; /* Màu tím đậm */
+}
+.teacher {
+    font-size: 0.8em;
+    color: #6a1b9a; /* Màu tím nhạt hơn */
+}
+.room {
+    font-style: italic;
+    font-size: 0.8em;
+    color: #9c27b0; /* Màu tím trung bình */
+}
+
+/* Button Group Styles */
+.button-group {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.add-button, .export-button, .submit-button, .cancel-button {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px; /* Nút tròn hơn */
+    cursor: pointer;
+    font-size: 1.0em;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-button {
+    background-color: #4CAF50; /* Xanh lá cây */
+    color: white;
+    margin-right: 15px;
+}
+.add-button:hover {
+    background-color: #43a047;
+    transform: translateY(-2px);
+}
+
+.export-button {
+    background-color: #ff5722; /* Cam đỏ */
+    color: white;
+}
+.export-button:hover {
+    background-color: #e64a19;
+    transform: translateY(-2px);
+}
+
+/* Form Styles */
+.form-container {
+    background-color: #fff9c4; /* Vàng nhạt */
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 25px;
+    border: 1px dashed #ffd700; /* Border nét đứt vàng */
+}
+
+.form-container.hidden {
+    display: none;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #ff914d;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+#addScheduleForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+#addScheduleForm input[type="text"], 
+#addScheduleForm select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffcc80; /* Border cam nhạt */
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9em;
+    background-color: #fff;
+}
+
+#addScheduleForm input::placeholder {
+    color: #b0bec5;
+}
+
+#addScheduleForm .submit-button {
+    background-color: #03a9f4; /* Xanh dương */
+    color: white;
+    grid-column: 1 / 2;
+}
+#addScheduleForm .submit-button:hover {
+    background-color: #039be5;
+}
+
+#addScheduleForm .cancel-button {
+    background-color: #e57373; /* Đỏ nhạt */
+    color: white;
+    grid-column: 2 / 3;
+}
+#addScheduleForm .cancel-button:hover {
+    background-color: #ef5350;
+}
+
+/* Footer and Decorations */
+.footer-text {
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    color: #616161;
+    margin-top: 30px;
+    font-size: 0.9em;
+}
+
+.decoration {
+    position: absolute;
+    z-index: 0; /* Đảm bảo decoration nằm dưới container */
+}
+
+.book-top-left {
+    top: 5px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffd700" stroke="%23ffc107" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V6.5A2.5 2.5 0 0 0 17.5 4h-11A2.5 2.5 0 0 0 4 6.5v13z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="M4 22.5A2.5 2.5 0 0 0 6.5 20h13.5V9.5A2.5 2.5 0 0 1 17.5 7h-11A2.5 2.5 0 0 1 4 9.5v13z"></path></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(-10deg);
+}
+
+.note-top-right {
+    top: 15px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff914d" stroke="%23e65100" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clipboard"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(15deg);
+}
+
+.books-bottom-left {
+    bottom: 0;
+    left: 10px;
+    width: 80px;
+    height: 80px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23aed581" stroke="%238bc34a" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-book-open" style="transform: scaleX(-1);"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(5deg);
+}
+
+.backpack-bottom-right {
+    bottom: 5px;
+    right: 10px;
+    width: 70px;
+    height: 70px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffb74d" stroke="%23fb8c00" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather feather-briefcase"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(-10deg);
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5em;
+    }
+    .date {
+        font-size: 1em;
+    }
+    .container {
+        padding: 20px;
+        max-width: 95%;
+    }
+    #scheduleTable th, #scheduleTable td {
+        padding: 8px 5px;
+        font-size: 0.8em;
+        min-width: 70px;
+    }
+    .button-group button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+    }
+    #addScheduleForm {
+        grid-template-columns: 1fr; /* Một cột trên màn hình nhỏ */
+    }
+    #addScheduleForm .submit-button, #addScheduleForm .cancel-button {
+        grid-column: auto;
+    }
+
+    /* Adjust decorations for smaller screens */
+    .decoration {
+        width: 30px;
+        height: 30px;
+    }
+    .books-bottom-left, .backpack-bottom-right {
+        width: 60px;
+        height: 60px;
+    }
+}
