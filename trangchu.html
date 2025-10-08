@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lịch Học Của Tôi</title>
+    <link rel="stylesheet" href="thietlap.css"> 
+</head>
+<body>
+    <div class="container">
+        <h1>Thời Khóa Biểu Học Kì</h1>
+
+        <div class="button-group">
+            <button id="showAddFormBtn" class="add-button">
+                + Thêm Môn Học Mới
+            </button>
+            <button id="exportCalendarBtn" class="export-button">
+                Lưu vào Lịch (iCal)
+            </button>
+        </div>
+        
+        <div id="addFormContainer" class="form-container hidden">
+            <h2>Thêm Môn Học/Sự Kiện</h2>
+            <form id="addScheduleForm">
+                <input type="text" id="tenMon" placeholder="Tên môn học (vd: Tin học)" required>
+                <input type="text" id="tiet" placeholder="Tiết học (vd: 1-5)" required>
+                <select id="thu" required>
+                    <option value="" disabled selected>Chọn Thứ</option>
+                    <option value="2">Thứ 2</option>
+                    <option value="3">Thứ 3</option>
+                    <option value="4">Thứ 4</option>
+                    <option value="5">Thứ 5</option>
+                    <option value="6">Thứ 6</option>
+                    <option value="7">Thứ 7</option>
+                    <option value="8">Thứ 8 (Tùy chỉnh)</option>
+                </select>
+                <input type="text" id="phongHoc" placeholder="Phòng học (vd: 502B)">
+                <input type="text" id="giaoVien" placeholder="Giáo viên (vd: Hà Đỗ Hồng Phúc)">
+                <input type="text" id="loaiGio" placeholder="Loại giờ (vd: LT/TH)">
+                <input type="text" id="tuanHoc" placeholder="Tuần học (vd: 1234)">
+                
+                <button type="submit" class="submit-button">Lưu Lịch Học</button>
+                <button type="button" id="cancelAddBtn" class="cancel-button">Hủy bỏ</button>
+            </form>
+        </div>
+
+        <table id="scheduleTable">
+            <thead>
+                <tr>
+                    <th>TT</th>
+                    <th>Mã MH</th>
+                    <th>Tên môn</th>
+                    <th>Loại giờ</th>
+                    <th>Nhóm</th>
+                    <th>Tiết</th>
+                    <th>Thứ</th>
+                    <th>Giáo viên</th>
+                    <th>Phòng học</th>
+                    <th>Tuần học</th>
+                </tr>
+            </thead>
+            <tbody>
+                </tbody>
+        </table>
+    </div>
+
+    <script src="monhoc.js"></script>
+</body>
+</html>
